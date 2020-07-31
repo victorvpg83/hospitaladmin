@@ -2,7 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
+import { HttpClientModule } from '@angular/common/http'
+
 // modules
 import { PagesModule } from './pages/pages.module';
 
@@ -25,7 +27,9 @@ import { RegisterComponent } from './login/register.component';
     PagesModule,
     AppRoutingModule, // import principal routes last
     FormsModule,
-    ServiceModule
+    ServiceModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
