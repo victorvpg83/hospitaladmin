@@ -9,6 +9,7 @@ import { Graphs1Component } from './graphs1/graphs1.component';
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { ProfileComponent } from './profile/profile.component';
 
 
 
@@ -23,6 +24,7 @@ const pagesRoutes: Routes = [
           { path: 'graphs1', component: Graphs1Component, data: { title: 'Graphs' } },
           { path: 'promises', component: PromisesComponent, data: { title: 'Promises' } },
           { path: 'rxjs', component: RxjsComponent, data: { title: 'RxJs' } },
+          { path: 'profile', component: ProfileComponent, data: { title: 'Profile' } },
           { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Ajustes tema' } },
           { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
 
