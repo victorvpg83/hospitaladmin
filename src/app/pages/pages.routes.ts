@@ -11,6 +11,9 @@ import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 
+// Maintenance
+import { UsersComponent } from './maintenance/users/users.component';
+
 
 
 const pagesRoutes: Routes = [
@@ -27,6 +30,9 @@ const pagesRoutes: Routes = [
           { path: 'profile', component: ProfileComponent, data: { title: 'Profile' } },
           { path: 'account-settings', component: AccountSettingsComponent, data: { title: 'Ajustes tema' } },
           { path: '', pathMatch: 'full', redirectTo: '/dashboard' },
+
+          // Maintenance
+          { path: 'users', component: UsersComponent, data: { title: 'Usuarios' } },
 
         ]
       }

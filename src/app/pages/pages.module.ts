@@ -21,6 +21,8 @@ import { PromisesComponent } from './promises/promises.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from '@angular/common';
+import { UsersComponent } from './maintenance/users/users.component';
+import { ModalImageComponent } from '../components/modal-image/modal-image.component';
 
 
 @NgModule({
@@ -34,12 +36,15 @@ import { CommonModule } from '@angular/common';
         AccountSettingsComponent,
         PromisesComponent,
         RxjsComponent,
-        ProfileComponent
+        ProfileComponent,
+        UsersComponent,
+        ModalImageComponent
     ],
     exports: [
         DashboardComponent,
         ProgressComponent,
         Graphs1Component,
+        ModalImageComponent
     ],
     imports: [
         CommonModule,
