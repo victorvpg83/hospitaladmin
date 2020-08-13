@@ -1,0 +1,96 @@
+<div 
+    class="row animated fadeIn fast"  
+>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <input 
+                    type="text"
+                    class="form-control"
+                    placeholder="Buscar doctor"
+                    #txtTerm
+                    (keyup)="search( txtTerm.value )"
+                />
+            </div>
+        </div>
+    </div>
+</div>
+
+<div 
+    class="row animated fadeIn fast"
+    *ngIf="loading"
+>
+    <div class="col-12">
+        <div class="alert alert-info text-center">
+          <h4 class="alert-heading">Cargando...</h4>
+          <i class="fa fa-spinner fa-spin fa-refresh fa-2x" ></i>
+          <p class="mb-0">Por favor espere</p>
+        </div>
+    </div>
+</div>
+
+<div 
+    class="row"
+    *ngIf="!loading"
+>
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <div class="row">
+                    <div class="col-8">
+                        <h4 class="card-title">Doctores</h4>
+                        <h6 class="card-subtitle">Doctores registrados ({{ doctors.length }})</h6>
+                    </div>
+                    <div class="col-4">
+                        <div class="text-right">
+                            <a 
+                                class="btn btn-primary"
+                                routerLink="/doctor/new"
+                            >
+                                <i class="fa fa-hospital-o" ></i>
+                                Añadir doctor
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th class="w100 text-center" >Foto</th>
+                                <th class="text-center">Nombre</th>
+                                <th class="text-nowrap w100 text-center">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let doctor of doctors">
+                                <td class="text-center">
+                                    <img 
+                                        [src]="doctor.img | image: 'doctors'" 
+                                        [alt]="doctor.name"
+                                        class="w100 cursor"
+                                        (click)="openModal( doctor )"
+                                    >
+                                </td>
+                                <td> {{ doctor.name }} </td>
+                                <td class="text-nowrap text-center">
+                                    <a [routerLink]="['/doctor', doctor._id]" data-toggle="tooltip" data-original-title="Editar"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a>
+                                    <a 
+                                        data-toggle="tooltip" 
+                                        data-original-title="Eliminar"
+                                        class="cursor"
+                                        (click)="deleteDoctor( doctor )"
+                                    > 
+                                    <i class="fa fa-close text-danger"></i> 
+                                    </a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

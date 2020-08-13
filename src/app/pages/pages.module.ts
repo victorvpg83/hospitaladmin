@@ -23,6 +23,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { CommonModule } from '@angular/common';
 import { UsersComponent } from './maintenance/users/users.component';
 import { ModalImageComponent } from '../components/modal-image/modal-image.component';
+import { HospitalsComponent } from './maintenance/hospitals/hospitals.component';
+import { DoctorsComponent } from './maintenance/doctors/doctors.component';
+import { PipesModule } from '../pipes/pipes.module';
+import { DoctorComponent } from './maintenance/doctors/doctor.component';
 
 
 @NgModule({
@@ -38,7 +42,10 @@ import { ModalImageComponent } from '../components/modal-image/modal-image.compo
         RxjsComponent,
         ProfileComponent,
         UsersComponent,
-        ModalImageComponent
+        ModalImageComponent,
+        HospitalsComponent,
+        DoctorsComponent,
+        DoctorComponent
     ],
     exports: [
         DashboardComponent,
@@ -52,7 +59,8 @@ import { ModalImageComponent } from '../components/modal-image/modal-image.compo
         PAGES_ROUTES,
         ReactiveFormsModule,
         FormsModule,
-        ChartsModule
+        ChartsModule,
+        PipesModule
     ]
 })
 
